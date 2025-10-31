@@ -139,63 +139,7 @@ header {
   display:block;
 }
 
-/* Slider */
-.slider {
-  position: relative;
-  width: 100%;
-  height: 100vh;
-  overflow: hidden;
-  margin-top: 64px; /* leave space for fixed header so images start below header */
-}
 
-/* slides inner uses flex (each .slide is 100%) */
-.slides {
-  display:flex;
-  height: calc(100vh - 64px); /* account for header height */
-  transition: transform 0.9s cubic-bezier(.2,.8,.2,1);
-  will-change: transform;
-}
-
-/* each slide takes viewport width */
-.slide {
-  flex: 0 0 100%;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  height: calc(100vh - 64px);
-  overflow: hidden;
-  position: relative;
-}
-
-/* images: cover but don't overscale weirdly; center them */
-.slide img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  object-position: center center;
-  display:block;
-  transform-origin: center center;
-  /* subtle downscale on very wide screens to avoid extreme zoom */
-  max-width: 1600px;
-}
-
-/* navigation arrows */
-.arrow {
-  position: absolute;
-  top: 50%;
-  transform: translateY(-50%);
-  background: rgba(0,0,0,0.45);
-  border: none;
-  color: white;
-  font-size: 28px;
-  padding: 10px 14px;
-  cursor: pointer;
-  z-index: 30;
-  border-radius: 4px;
-}
-.arrow.left { left: 20px; }
-.arrow.right { right: 20px; }
-.arrow:hover { background: rgba(255,255,255,0.06); }
 
 /* responsive adjustments */
 @media (max-width: 880px) {
