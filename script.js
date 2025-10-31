@@ -2,33 +2,18 @@
 
 
 document.addEventListener('DOMContentLoaded', function () {
-  const photos = [
-  "portfolio/re/small_IMG_8221.jpg",
-  "portfolio/re/small_IMG_8218.jpg",
-  "portfolio/re/small_IMG_8228-HDR.jpg",
-  "portfolio/re/small_IMG_8237.jpg",
-  "portfolio/re/small_IMG_8294.jpg",
-  "portfolio/re/small_IMG_8303.jpg",
-  "portfolio/re/small_IMG_8307.jpg",
-  "portfolio/re/small_IMG_8317.jpg",
-  "portfolio/re/small_IMG_8319-HDR.jpg",
-  "portfolio/re/small_IMG_8351.jpg",
-  "portfolio/re/small_IMG_8354.jpg",
-  "portfolio/re/small_IMG_8367.jpg",
-
-
-  ];
+  
   
   const photoGroups = [
   {
     title: "Astro",
-    photos: ["portfolio/astro/andromeda_sequator.jpg", 
-            "portfolio/astro/asstackfinal.jpg",
-            "portfolio/astro/bivak_mlijecniput_boljeboje.jpg",
-            "portfolio/astro/export2.jpg",
-            "portfolio/astro/mjeseccomposite.png",
-            "portfolio/astro/sequator-final---nr.jpg",
-            "portfolio/astro/umoljani_stecak.jpg",
+    photos: ["portfolio/astro/image_1.jpg", 
+            "portfolio/astro/image_2.jpg", 
+            "portfolio/astro/image_3.jpg", 
+            "portfolio/astro/image_4.jpg", 
+            "portfolio/astro/image_5.jpg", 
+            "portfolio/astro/image_6.jpg", 
+            "portfolio/astro/image_7.jpg", 
     ]
   },
 
@@ -36,32 +21,41 @@ document.addEventListener('DOMContentLoaded', function () {
   
   {
     title: "Urban Photography",
-    photos: ["portfolio/street/IMG_6082.jpg",
-      "portfolio/street/IMG_6216.jpg",
-      "portfolio/street/IMG_6222.jpg",
-      "portfolio/street/IMG_6245.jpg",
-      "portfolio/street/IMG_6256.jpg",
-      "portfolio/street/IMG_6259.jpg",
-     ]
+    photos: ["portfolio/street/image_1.jpg", 
+            "portfolio/street/image_2.jpg", 
+            "portfolio/street/image_3.jpg", 
+            "portfolio/street/image_4.jpg", 
+            "portfolio/street/image_5.jpg", 
+            "portfolio/street/image_6.jpg", 
+    ]
   },
 
 
 
   {
     title: "Real estate",
-    photos: ["portfolio/re/small_IMG_8221.jpg",
-            "portfolio/re/small_IMG_8218.jpg",
-            "portfolio/re/small_IMG_8228-HDR.jpg",
-            "portfolio/re/small_IMG_8237.jpg",
-            "portfolio/re/small_IMG_8294.jpg",
-            "portfolio/re/small_IMG_8303.jpg",
-            "portfolio/re/small_IMG_8307.jpg",
-            "portfolio/re/small_IMG_8317.jpg",
-            "portfolio/re/small_IMG_8319-HDR.jpg",
-            "portfolio/re/small_IMG_8351.jpg",
-            "portfolio/re/small_IMG_8354.jpg",
-            "portfolio/re/small_IMG_8367.jpg",
-]
+    photos: ["portfolio/re/image_1.jpg", 
+            "portfolio/re/image_2.jpg", 
+            "portfolio/re/image_3.jpg", 
+            "portfolio/re/image_4.jpg", 
+            "portfolio/re/image_5.jpg", 
+            "portfolio/re/image_6.jpg", 
+            "portfolio/re/image_7.jpg", 
+            "portfolio/re/image_8.jpg", 
+            "portfolio/re/image_9.jpg", 
+            "portfolio/re/image_10.jpg", 
+            "portfolio/re/image_11.jpg", 
+            "portfolio/re/image_12.jpg", 
+            "portfolio/re/image_13.jpg", 
+            "portfolio/re/image_14.jpg", 
+            "portfolio/re/image_15.jpg", 
+            "portfolio/re/image_16.jpg", 
+            "portfolio/re/image_17.jpg", 
+            "portfolio/re/image_18.jpg", 
+            "portfolio/re/image_19.jpg", 
+            "portfolio/re/image_20.jpg", 
+            "portfolio/re/image_21.jpg", 
+    ]
   }
   ];
 
