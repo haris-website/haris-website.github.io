@@ -81,21 +81,29 @@ document.addEventListener('DOMContentLoaded', function () {
   track.classList.add("carousel-track");
 
   group.photos.forEach(photo => {
+    const link = document.createElement("a");
+    link.href = photo; // full-size image for lightbox
+    link.className = "glightbox";
+    link.setAttribute("data-gallery", `gallery-${group.title.replace(/\s+/g,'')}`);
+
     const img = document.createElement("img");
     img.src = photo;
-    track.appendChild(img);
+    img.alt = photo.split("/").pop().split(".")[0];
+
+    link.appendChild(img);
+    track.appendChild(link); // append to track, NOT container
   });
 
   section.appendChild(track);
   container.appendChild(section);
-});
+  });
 
 
-const carousels = document.querySelectorAll('.carousel-section');
-const baseSpeed = 0.5; // pixels horizontal per 1 pixel vertical scroll
-const edgePadding = 20; // pixels of padding at left/right edges
+  const carousels = document.querySelectorAll('.carousel-section');
+  const baseSpeed = 0.5; // pixels horizontal per 1 pixel vertical scroll
+  const edgePadding = 10; // pixels of padding at left/right edges
 
-function updateCarousels() {
+  function updateCarousels() {
     const scrollY = window.scrollY; // vertical scroll position
 
     carousels.forEach((carousel, index) => {
@@ -123,13 +131,18 @@ function updateCarousels() {
 
         track.style.transform = `translateX(${-translateX + edgePadding}px)`;
     });
-}
+  }
 
-// Update on scroll and resize
-window.addEventListener('scroll', updateCarousels);
-window.addEventListener('resize', updateCarousels);
+  // Update on scroll and resize
+  window.addEventListener('scroll', updateCarousels);
+  window.addEventListener('resize', updateCarousels);
 
-// Initial call
-updateCarousels();
-
+  // Initial call
+  updateCarousels();
+  const lightbox = GLightbox({
+    selector: '.glightbox',
+    touchNavigation: true,
+    loop: true,
+    zoomable: true
+});
 });

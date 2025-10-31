@@ -53,6 +53,7 @@ header {
 .carousel-track {
       display: flex;
       gap: 10px;
+    
       transition: transform 0.2s linear;
       will-change:transform;
 }
