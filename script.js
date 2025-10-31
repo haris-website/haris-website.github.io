@@ -90,8 +90,29 @@ document.addEventListener('DOMContentLoaded', function () {
   container.appendChild(section);
 });
 
+const carousels = document.querySelectorAll('.carousel-section');
 
-  const slidesContainer = document.querySelector('.slides');
+window.addEventListener('scroll', () => {
+  const viewportHeight = window.innerHeight;
+
+  carousels.forEach(section => {
+    const track = section.querySelector('.carousel-track');
+    const rect = section.getBoundingClientRect();
+
+    // scrollProgress: 0 to 1 while section is visible
+    let scrollProgress = 1 - (rect.bottom / (viewportHeight + rect.height));
+    scrollProgress = Math.min(Math.max(scrollProgress, 0), 1);
+
+    const trackWidth = track.scrollWidth;
+    const containerWidth = track.parentElement.offsetWidth;
+    const maxTranslate = trackWidth - containerWidth;
+
+    track.style.transform = `translateX(-${scrollProgress * maxTranslate}px)`;
+  });
+});
+});
+
+/*  const slidesContainer = document.querySelector('.slides');
   slidesContainer.innerHTML = photos
   .map(src => `<div class="slide"><img src="${src}" alt=""></div>`)
   .join('');
@@ -146,24 +167,4 @@ document.addEventListener('DOMContentLoaded', function () {
   goTo(0);
   start();
 });
-
-const carousels = document.querySelectorAll('.carousel-section');
-
-window.addEventListener('scroll', () => {
-  const viewportHeight = window.innerHeight;
-
-  carousels.forEach(section => {
-    const track = section.querySelector('.carousel-track');
-    const rect = section.getBoundingClientRect();
-
-    // scrollProgress: 0 to 1 while section is visible
-    let scrollProgress = 1 - (rect.bottom / (viewportHeight + rect.height));
-    scrollProgress = Math.min(Math.max(scrollProgress, 0), 1);
-
-    const trackWidth = track.scrollWidth;
-    const containerWidth = track.parentElement.offsetWidth;
-    const maxTranslate = trackWidth - containerWidth;
-
-    track.style.transform = `translateX(-${scrollProgress * maxTranslate}px)`;
-  });
-});
+*/
