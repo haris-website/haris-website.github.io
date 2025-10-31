@@ -19,11 +19,11 @@ body {
 
 /* Header: fix to top but small padding so center nav stays visible */
 header {
-  position: fixed;
+  position:relative;
   top: 0;
   left: 0;
   right: 0;
-  height: 64px;
+  height: 128px;
   display: flex;
   align-items: center;
   justify-content: center; /* center wrapper horizontally */
@@ -32,6 +32,30 @@ header {
   background: linear-gradient(180deg, rgba(14,14,14,0.25), rgba(14,14,14,0.05));
   backdrop-filter: blur(2px);
 }
+
+header nav a {
+  position: relative;
+  text-decoration: none;
+  color: white; /* or your preferred color */
+  margin: 0 15px;
+  font-size: 1.2rem;
+}
+
+header nav a::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -4px;           /* distance below text */
+  width: 0%;
+  height: 2px;
+  background-color: white; /* underline color */
+  transition: width 0.3s ease;
+}
+
+header nav a:hover::after {
+  width: 100%;
+}
+
 
 .carousel-section {
   position: relative;
@@ -56,6 +80,9 @@ header {
     
       transition: transform 0.2s linear;
       will-change:transform;
+      cursor: grab;
+      cursor: -webkit-grab;
+      user-select: none;
 }
 
 .carousel-track img {
@@ -63,6 +90,38 @@ header {
       width: auto;
       flex-shrink: 0;
 }
+
+#intro-section {
+  text-align: center;
+  max-width: 900px;
+  margin: 60px auto 40px auto; /* spacing from top and bottom */
+  padding: 0 20px;
+  font-family: sans-serif;
+}
+
+#intro-section h1 {
+  font-size: 2.5rem;
+  margin-bottom: 20px;
+  font-weight: 600;
+  letter-spacing: 1px;
+}
+
+#intro-section p {
+  font-size: 1.1rem;
+  line-height: 1.6;
+  color: #ccc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 600px) {
+  #intro-section h1 {
+    font-size: 2rem;
+  }
+  #intro-section p {
+    font-size: 1rem;
+  }
+}
+
 
 #about {
       text-align: center;
