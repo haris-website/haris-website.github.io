@@ -33,28 +33,34 @@ document.addEventListener('DOMContentLoaded', function () {
 
 
   {
-    title: "Real estate",
-    photos: ["portfolio/re/image_1.jpg", 
-            "portfolio/re/image_2.jpg", 
-            "portfolio/re/image_3.jpg", 
-            "portfolio/re/image_4.jpg", 
-            "portfolio/re/image_5.jpg", 
-            "portfolio/re/image_6.jpg", 
-            "portfolio/re/image_7.jpg", 
-            "portfolio/re/image_8.jpg", 
-            "portfolio/re/image_9.jpg", 
-            "portfolio/re/image_10.jpg", 
-            "portfolio/re/image_11.jpg", 
-            "portfolio/re/image_12.jpg", 
-            "portfolio/re/image_13.jpg", 
-            "portfolio/re/image_14.jpg", 
-            "portfolio/re/image_15.jpg", 
-            "portfolio/re/image_16.jpg", 
-            "portfolio/re/image_17.jpg", 
-            "portfolio/re/image_18.jpg", 
-            "portfolio/re/image_19.jpg", 
-            "portfolio/re/image_20.jpg", 
-            "portfolio/re/image_21.jpg", 
+    title: "Atifa apartments",
+    photos: ["portfolio/re/atifa/image_8.jpg", 
+            "portfolio/re/atifa/image_9.jpg", 
+            "portfolio/re/atifa/image_10.jpg", 
+            "portfolio/re/atifa/image_11.jpg", 
+            "portfolio/re/atifa/image_12.jpg", 
+            "portfolio/re/atifa/image_13.jpg", 
+            "portfolio/re/atifa/image_14.jpg", 
+            "portfolio/re/atifa/image_15.jpg", 
+            "portfolio/re/atifa/image_16.jpg", 
+            "portfolio/re/atifa/image_17.jpg", 
+            "portfolio/re/atifa/image_18.jpg", 
+            "portfolio/re/atifa/image_19.jpg", 
+            "portfolio/re/atifa/image_20.jpg", 
+            "portfolio/re/atifa/image_21.jpg", 
+    ]
+  },
+
+
+  {
+    title: "Sarajevo view apartments",
+    photos: ["portfolio/re/sv/image_1.jpg", 
+            "portfolio/re/sv/image_2.jpg", 
+            "portfolio/re/sv/image_3.jpg", 
+            "portfolio/re/sv/image_4.jpg", 
+            "portfolio/re/sv/image_5.jpg", 
+            "portfolio/re/sv/image_6.jpg", 
+            "portfolio/re/sv/image_7.jpg", 
     ]
   }
   ];
@@ -84,81 +90,46 @@ document.addEventListener('DOMContentLoaded', function () {
   container.appendChild(section);
 });
 
+
 const carousels = document.querySelectorAll('.carousel-section');
+const baseSpeed = 0.5; // pixels horizontal per 1 pixel vertical scroll
+const edgePadding = 20; // pixels of padding at left/right edges
 
-window.addEventListener('scroll', () => {
-  const viewportHeight = window.innerHeight;
+function updateCarousels() {
+    const scrollY = window.scrollY; // vertical scroll position
 
-  carousels.forEach(section => {
-    const track = section.querySelector('.carousel-track');
-    const rect = section.getBoundingClientRect();
+    carousels.forEach((carousel, index) => {
+        const track = carousel.querySelector('.carousel-track');
+        const containerWidth = carousel.offsetWidth;
+        const trackWidth = track.scrollWidth;
 
-    // scrollProgress: 0 to 1 while section is visible
-    let scrollProgress = 1 - (rect.bottom / (viewportHeight + rect.height));
-    scrollProgress = Math.min(Math.max(scrollProgress, 0), 1);
+        // Alternate direction
+        const direction = (index % 2 === 0) ? 1 : -1;
 
-    const trackWidth = track.scrollWidth;
-    const containerWidth = track.parentElement.offsetWidth;
-    const maxTranslate = trackWidth - containerWidth;
+        // Slight deterministic speed variation per carousel (±5%)
+        const speedFactor = 0.95 + 0.1 * (index / carousels.length);
+        const speed = baseSpeed * speedFactor;
 
-    track.style.transform = `translateX(-${scrollProgress * maxTranslate}px)`;
-  });
+        // Initial offset for right-moving carousels: last photo flush with padding
+        const initialOffset = direction === -1 ? trackWidth - containerWidth + edgePadding : 0;
+
+        // Constant movement
+        let translateX = initialOffset + scrollY * speed * direction;
+
+        // Cap translation to keep first/last photo aligned with padding
+        const maxTranslate = Math.max(trackWidth - containerWidth, 0);
+        if (direction === 1) translateX = Math.min(translateX, maxTranslate - edgePadding);
+        else translateX = Math.max(translateX, 0);
+
+        track.style.transform = `translateX(${-translateX + edgePadding}px)`;
+    });
+}
+
+// Update on scroll and resize
+window.addEventListener('scroll', updateCarousels);
+window.addEventListener('resize', updateCarousels);
+
+// Initial call
+updateCarousels();
+
 });
-});
-
-/*  const slidesContainer = document.querySelector('.slides');
-  slidesContainer.innerHTML = photos
-  .map(src => `<div class="slide"><img src="${src}" alt=""></div>`)
-  .join('');
-
-  
-  
-  const slidesWrap = document.querySelector('.slides');
-  const slides = Array.from(document.querySelectorAll('.slide'));
-  const prevBtn = document.querySelector('.left');
-  const nextBtn = document.querySelector('.right');
-
-  if (!slidesWrap || slides.length === 0) return;
-
-  let index = 0;
-  let timerId = null;
-  const AUTOPLAY_MS = 5000;
-
-  function goTo(i) {
-    index = (i % slides.length + slides.length) % slides.length;
-    slidesWrap.style.transform = `translateX(${-index * 100}%)`;
-  }
-
-  function next() { goTo(index + 1); }
-  function prev() { goTo(index - 1); }
-
-  function start() {
-    stop();
-    timerId = setInterval(next, AUTOPLAY_MS);
-  }
-  function stop() {
-    if (timerId) { clearInterval(timerId); timerId = null; }
-  }
-
-  // arrows
-  if (nextBtn) nextBtn.addEventListener('click', () => { next(); start(); });
-  if (prevBtn) prevBtn.addEventListener('click', () => { prev(); start(); });
-
-  // pause on hover (on the visible slider area)
-  const slider = document.querySelector('.slider');
-  if (slider) {
-    slider.addEventListener('mouseenter', stop);
-    slider.addEventListener('mouseleave', start);
-  }
-
-  // keyboard navigation (optional convenience)
-  document.addEventListener('keydown', (ev) => {
-    if (ev.key === 'ArrowLeft') { prev(); start(); }
-    if (ev.key === 'ArrowRight') { next(); start(); }
-  });
-
-  // initialize
-  goTo(0);
-  start();
-});
-*/
