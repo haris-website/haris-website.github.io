@@ -1,0 +1,215 @@
+/* style.css - responsive, corrected layout */
+
+:root{
+  --bg: #0e0e0e;
+  --panel: #111;
+  --muted: #999;
+}
+
+* { box-sizing: border-box; }
+html,body { height: 100%; margin: 0; }
+
+body {
+  font-family: Inter, system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial;
+  background: var(--bg);
+  color: #fff;
+  -webkit-font-smoothing:antialiased;
+  -moz-osx-font-smoothing:grayscale;
+}
+
+/* Header: fix to top but small padding so center nav stays visible */
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 64px;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center wrapper horizontally */
+  pointer-events: auto;
+  z-index: 100;
+  background: linear-gradient(180deg, rgba(14,14,14,0.25), rgba(14,14,14,0.05));
+  backdrop-filter: blur(2px);
+}
+
+.carousel-section {
+      margin: 80px 0;
+}
+
+.carousel-section h2 {
+      text-align: center;
+      margin-bottom: 20px;
+      font-family: sans-serif;
+      font-size: 1.5rem;
+}
+
+.carousel-track {
+      display: flex;
+      gap: 20px;
+      transition: transform 0.2s ease;
+}
+
+.carousel-track img {
+      height: 200px;
+      width: auto;
+      flex-shrink: 0;
+}
+
+#about {
+      text-align: center;
+      margin: 40px 0;
+      font-family: sans-serif;
+}
+
+
+
+/* logo on the left (visually), nav centered */
+.logo {
+  position: absolute;
+  left: 24px;
+  font-weight: 600;
+  letter-spacing: 0.6px;
+  font-size: 1rem;
+}
+.logo a { color: #fff; text-decoration: none; }
+
+/* container that keeps nav centered regardless of left logo */
+.nav-center {
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  width:100%;
+  max-width:1100px;
+  padding: 0 80px; /* keeps some spacing on both sides */
+}
+
+/* nav layout */
+.main-nav {
+  display:flex;
+  gap: 18px;
+  align-items:center;
+}
+
+/* nav links */
+.main-nav a {
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+  padding: 6px 8px;
+  letter-spacing: 0.8px;
+  display:inline-block;
+}
+.main-nav a:hover { outline: none; opacity: 0.9; }
+
+/* dropdown */
+.dropdown { position: relative; }
+.dropbtn {
+  background: none;
+  border: none;
+  color: #fff;
+  font-size: 1.1rem;
+  cursor: pointer;
+  padding: 6px 8px;
+}
+.dropdown-content {
+  display:none;
+  position: absolute;
+  right: 0;
+  top: calc(100% + 8px);
+  background: #141414;
+  border-radius: 4px;
+  box-shadow: 0 8px 20px rgba(0,0,0,0.6);
+  min-width: 160px;
+  overflow: hidden;
+}
+.dropdown-content a {
+  display:block;
+  padding: 10px 14px;
+  color: #fff;
+  text-decoration: none;
+  font-size: 0.95rem;
+}
+.dropdown-content a:hover { background: rgba(255,255,255,0.04); }
+
+/* show dropdown on hover/focus */
+.dropdown:hover .dropdown-content,
+.dropdown:focus-within .dropdown-content {
+  display:block;
+}
+
+/* Slider */
+.slider {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  overflow: hidden;
+  margin-top: 64px; /* leave space for fixed header so images start below header */
+}
+
+/* slides inner uses flex (each .slide is 100%) */
+.slides {
+  display:flex;
+  height: calc(100vh - 64px); /* account for header height */
+  transition: transform 0.9s cubic-bezier(.2,.8,.2,1);
+  will-change: transform;
+}
+
+/* each slide takes viewport width */
+.slide {
+  flex: 0 0 100%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height: calc(100vh - 64px);
+  overflow: hidden;
+  position: relative;
+}
+
+/* images: cover but don't overscale weirdly; center them */
+.slide img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  object-position: center center;
+  display:block;
+  transform-origin: center center;
+  /* subtle downscale on very wide screens to avoid extreme zoom */
+  max-width: 1600px;
+}
+
+/* navigation arrows */
+.arrow {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  background: rgba(0,0,0,0.45);
+  border: none;
+  color: white;
+  font-size: 28px;
+  padding: 10px 14px;
+  cursor: pointer;
+  z-index: 30;
+  border-radius: 4px;
+}
+.arrow.left { left: 20px; }
+.arrow.right { right: 20px; }
+.arrow:hover { background: rgba(255,255,255,0.06); }
+
+/* responsive adjustments */
+@media (max-width: 880px) {
+  header { height:56px; }
+  .nav-center { padding: 0 18px; }
+  .logo { left: 14px; font-size: 0.95rem; }
+  .main-nav { gap: 12px; }
+  .main-nav a { font-size: 0.9rem; padding: 4px 6px; }
+  .slides { height: calc(100vh - 56px); }
+  .slide { height: calc(100vh - 56px); }
+  .arrow { font-size: 22px; padding: 8px 10px; }
+}
+
+@media (max-width: 420px) {
+  /* collapse nav numbers into smaller spacing */
+  .main-nav a { font-size: 0.85rem; padding: 3px 5px; }
+  .dropbtn { font-size: 1rem; }
+}
