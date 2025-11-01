@@ -233,6 +233,10 @@ header nav a:hover::after {
   opacity: 0.8;
 }
 
+
+
+
+
 /* Responsive adjustments */
 @media (max-width: 880px) {
   header { height: 56px; }

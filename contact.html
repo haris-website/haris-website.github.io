@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Contact Me</title>
+  <link rel="stylesheet" href="contact.css">
+</head>
+<body>
+    <header>
+    <div class="logo"><a href="index.html">Haris Torlak</a></div>
+
+    <!-- center nav wrapper keeps items centered responsibly -->
+    <div class="nav-center">
+      <nav class="main-nav" aria-label="Main navigation">
+        <a href="index.html">01</a>
+        <a href="two.html">02</a>
+        <a href="three.html">03</a>
+        <a href="four.html">04</a>
+        <div class="dropdown">
+          <button class="dropbtn" aria-haspopup="true" aria-expanded="false">+</button>
+          <div class="dropdown-content" role="menu">
+            <a href="about.html" role="menuitem">About</a>
+            <a href="contact.html" role="menuitem">Contact</a>
+          </div>
+            </div>
+    </nav>
+    </div>
+    </header>
+
+
+
+
+  <div class="contact-container">
+    <!-- LEFT: Contact Form -->
+    <div class="contact-left">
+      <h1>Contact Me</h1>
+      <form action="https://formspree.io/f/YOUR_FORM_ID" method="POST" class="contact-form">
+        <div class="top-fields">
+          <input type="text" name="name" placeholder="Name / Surname" required>
+          <input type="email" name="email" placeholder="Email Address" required>
+        </div>
+        <textarea name="message" placeholder="Your Message" required></textarea>
+        <button type="submit">Send Message</button>
+      </form>
+      <div class="social-links">
+        <a href="https://instagram.com/torlak.png" target="_blank">Instagram</a>
+        <a href="https://x.com/" target="_blank">X</a>
+      </div>
+    </div>
+
+    
+  </div>
+
+</body>
+</html>

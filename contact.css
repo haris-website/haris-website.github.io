@@ -1,0 +1,197 @@
+/* Reset */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  font-family: sans-serif;
+}
+
+body {
+  background-image: url('portfolio/DJI_0050.JPG');
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  color: #fff;
+  min-height: 100vh;
+}
+
+/* Container: two vertical halves */
+.contact-container {
+  display: flex;
+  flex-direction: row;
+  min-height: 100vh;
+}
+
+/* LEFT SIDE: FORM */
+.contact-left {
+  width:100%;
+  max-width: 800px;
+  margin: 0 auto;
+  flex: 1;
+  padding: 60px 40px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  box-sizing: border-box;
+}
+
+.contact-left h1 {
+  font-size: 3rem;
+  font-weight: bold;
+  margin-bottom: 40px;
+  text-align: left;
+}
+
+/* Form Styling */
+.contact-form {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 100px;
+}
+
+.top-fields {
+  display: flex;
+  gap: 20px;
+}
+
+.contact-form input,
+.contact-form textarea {
+  background: #000;
+  border: 2px solid #aaa;
+  border-radius: 8px;
+  padding: 15px;
+  color: #fff;
+  font-size: 1rem;
+  transition: border-color 0.3s, box-shadow 0.3s;
+  flex: 1;
+  box-shadow: 0 0 30px rgb(255, 255, 255);
+}
+
+.contact-form input:focus,
+.contact-form textarea:focus {
+  outline: none;
+  border-color: #fff;
+  box-shadow: 0 0 10px rgba(255,255,255,0.6);
+}
+
+/* Make the message textarea taller */
+.contact-form textarea {
+  resize: vertical;
+  min-height: 300px;
+}
+
+/* Submit Button */
+.contact-form button {
+  padding: 15px 25px;
+  font-size: 1.1rem;
+  border-radius: 8px;
+  border: none;
+  background-color: #fff;
+  color: #0e0e0e;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.contact-form button:hover {
+  background-color: #ddd;
+}
+
+/* SOCIAL LINKS */
+.social-links {
+  margin-top: 40px;
+  display: flex;
+  gap: 20px;
+}
+
+.social-links a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: bold;
+  transition: color 0.3s;
+}
+
+.social-links a:hover {
+  color: #aaa;
+}
+
+
+
+
+
+
+/* Responsive for mobile */
+@media (max-width: 900px) {
+  .contact-container {
+    flex-direction: column;
+  }
+  
+  .top-fields {
+    flex-direction: column;
+  }
+  
+  .contact-left, .contact-right {
+    padding: 40px 20px;
+  }
+  
+  .contact-left h1 {
+    font-size: 2.2rem;
+    margin-bottom: 30px;
+  }
+  
+  .contact-right h2 {
+    font-size: 1.5rem;
+  }
+  
+  .contact-form textarea {
+    min-height: 200px;
+  }
+}
+
+
+@media (min-width: 1024px) {
+  #contact-page form {
+    max-width: 33%;        /* roughly a third of the screen */
+  }
+}
+
+
+header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 100px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: auto;
+  z-index: 100;
+
+  background:  rgba(14,14,14,0.5);
+  backdrop-filter: blur(12px);
+  border-bottom: none;
+}
+
+header nav a {
+  position: relative;
+  text-decoration: none;
+  color: white;
+  margin: 0 15px;
+  font-size: 1.2rem;
+}
+header nav a::after {
+  content: "";
+  position: relative;
+  left: 0;
+  bottom: -4px;
+  width: 0%;
+  height: 2px;
+  background-color: white;
+  transition: width 0.3s ease;
+}
+header nav a:hover::after {
+  width: 100%;
+}
