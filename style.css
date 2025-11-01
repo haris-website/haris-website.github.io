@@ -191,9 +191,12 @@ header nav a:hover::after {
   overflow: hidden; /* prevent page horizontal scroll */
   width: 100%;
   margin: 20px 0;
+  padding-bottom: 20px;
+  background-color: transparent;
 }
 
 .carousel-section h2 {
+  background-color: transparent;
   text-align: left;
   margin: 5px 0 20px 10px;
   font-family: sans-serif;
