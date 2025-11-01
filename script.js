@@ -117,17 +117,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
       // Cap translation to keep photos within bounds
       const maxTranslate = Math.max(trackWidth - containerWidth, 0);
-      if (direction === 1) translateX = Math.min(translateX, maxTranslate - edgePadding);
+      if (direction === 1) translateX = Math.min(translateX, maxTranslate);
       else translateX = Math.max(translateX, 0);
 
       track.style.transform = `translateX(${-translateX + edgePadding}px)`;
+
     });
   }
+
+  
 
   window.addEventListener('scroll', updateCarousels);
   window.addEventListener('resize', updateCarousels);
 
   updateCarousels();
+
+  
 
   // ---- LIGHTBOX ----
   const lightbox = GLightbox({
