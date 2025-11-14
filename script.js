@@ -1,145 +1,163 @@
-document.addEventListener('DOMContentLoaded', function () {
+// ===== script.js =====
+(function(){
+  'use strict';
 
-  // ---- PHOTO DATA ----
-  const photoGroups = [
+  /* Navigation */
+  document.querySelectorAll('.nav-btn').forEach(btn=>{
+    btn.addEventListener('click', ()=>{
+      const t = btn.getAttribute('data-target');
+      if(t) window.location.href = t;
+    });
+  });
+
+  /* Fullscreen */
+  function toggleFullscreen(){
+    if(document.fullscreenElement){
+      document.exitFullscreen().catch(()=>{});
+    } else {
+      document.documentElement.requestFullscreen().catch(()=>{});
+    }
+  }
+  const fs1 = document.getElementById('fsToggle');
+  const fs2 = document.getElementById('fsToggle2');
+  if(fs1) fs1.addEventListener('click', toggleFullscreen);
+  if(fs2) fs2.addEventListener('click', toggleFullscreen);
+
+  /* Placeholder images */
+  const recentImages = [
     {
-      title: "Astro",
-      photos: [
-        "portfolio/astro/image_1.jpg",
-        "portfolio/astro/image_2.jpg",
-        "portfolio/astro/image_3.jpg",
-        "portfolio/astro/image_4.jpg",
-        "portfolio/astro/image_5.jpg",
-        "portfolio/astro/image_6.jpg",
-        "portfolio/astro/image_7.jpg",
-      ]
+    thumb: "portfolio/street/image_1.jpg",
+    full: "portfolio/street/image_1.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
     },
     {
-      title: "Urban Photography",
-      photos: [
-        "portfolio/street/image_1.jpg",
-        "portfolio/street/image_2.jpg",
-        "portfolio/street/image_3.jpg",
-        "portfolio/street/image_4.jpg",
-        "portfolio/street/image_5.jpg",
-        "portfolio/street/image_6.jpg",
-      ]
+    thumb: "portfolio/street/image_2.jpg",
+    full: "portfolio/street/image_2.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
     },
     {
-      title: "Atifa Apartments",
-      photos: [
-        "portfolio/re/atifa/image_8.jpg",
-        "portfolio/re/atifa/image_9.jpg",
-        "portfolio/re/atifa/image_10.jpg",
-        "portfolio/re/atifa/image_11.jpg",
-        "portfolio/re/atifa/image_12.jpg",
-        "portfolio/re/atifa/image_13.jpg",
-        "portfolio/re/atifa/image_14.jpg",
-        "portfolio/re/atifa/image_15.jpg",
-        "portfolio/re/atifa/image_16.jpg",
-        "portfolio/re/atifa/image_17.jpg",
-        "portfolio/re/atifa/image_18.jpg",
-        "portfolio/re/atifa/image_19.jpg",
-        "portfolio/re/atifa/image_20.jpg",
-        "portfolio/re/atifa/image_21.jpg",
-      ]
+    thumb: "portfolio/street/image_3.jpg",
+    full: "portfolio/street/image_3.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
     },
     {
-      title: "Sarajevo View Apartments",
-      photos: [
-        "portfolio/re/sv/image_1.jpg",
-        "portfolio/re/sv/image_2.jpg",
-        "portfolio/re/sv/image_3.jpg",
-        "portfolio/re/sv/image_4.jpg",
-        "portfolio/re/sv/image_5.jpg",
-        "portfolio/re/sv/image_6.jpg",
-        "portfolio/re/sv/image_7.jpg",
-      ]
+    thumb: "portfolio/street/image_4.jpg",
+    full: "portfolio/street/image_4.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/street/image_5.jpg",
+    full: "portfolio/street/image_5.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/street/image_6.jpg",
+    full: "portfolio/street/image_6.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
     }
   ];
 
-  // ---- BUILD CAROUSELS ----
-  const container = document.getElementById("carousels-container");
+  const portfolioImages = [
+    {
+    thumb: "portfolio/astro/image_1.jpg",
+    full: "portfolio/astro/image_1.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/astro/image_2.jpg",
+    full: "portfolio/astro/image_2.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/astro/image_3.jpg",
+    full: "portfolio/astro/image_3.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/astro/image_4.jpg",
+    full: "portfolio/astro/image_4.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/astro/image_5.jpg",
+    full: "portfolio/astro/image_5.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/astro/image_6.jpg",
+    full: "portfolio/astro/image_6.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/astro/image_7.jpg",
+    full: "portfolio/astro/image_7.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+  ];
 
-  photoGroups.forEach(group => {
-    const section = document.createElement("div");
-    section.classList.add("carousel-section");
+  /* Gallery generator */
+  function populateGallery(id, list){
+    const grid = document.getElementById(id);
+    if(!grid) return;
 
-    const title = document.createElement("h2");
-    title.textContent = group.title;
-    section.appendChild(title);
+    const cols = grid.querySelectorAll('.col');
 
-    const track = document.createElement("div");
-    track.classList.add("carousel-track");
+    list.forEach((img, index)=>{
+      const col = cols[index % 3];
 
-    group.photos.forEach(photo => {
-      const link = document.createElement("a");
-      link.href = photo;
-      link.className = "glightbox";
-      link.setAttribute("data-gallery", `gallery-${group.title.replace(/\s+/g,'')}`);
-
-      const img = document.createElement("img");
-      img.src = photo;
-      img.alt = photo.split("/").pop().split(".")[0];
-
-      link.appendChild(img);
-      track.appendChild(link);
-    });
-
-    section.appendChild(track);
-    container.appendChild(section);
-  });
-
-  // ---- SCROLL + PARALLAX ----
-  const carousels = document.querySelectorAll('.carousel-section');
-  const baseSpeed = 0.5;
-  const edgePadding = 10;
-
-  function updateCarousels() {
-    const scrollY = window.scrollY;
-
-    carousels.forEach((carousel, index) => {
-      const track = carousel.querySelector('.carousel-track');
-      const containerWidth = carousel.offsetWidth;
-      const trackWidth = track.scrollWidth;
-
-      // Alternate direction
-      const direction = (index % 2 === 0) ? 1 : -1;
-
-      // Slight speed variation
-      const speedFactor = 0.9 + 0.15 * (index / carousels.length);
-      const speed = baseSpeed * speedFactor;
-
-      // Initial offset for right-to-left
-      const initialOffset = direction === -1 ? trackWidth - containerWidth + edgePadding : 0;
-
-      let translateX = initialOffset + scrollY * speed * direction;
-
-      // Cap translation to keep photos within bounds
-      const maxTranslate = Math.max(trackWidth - containerWidth, 0);
-      if (direction === 1) translateX = Math.min(translateX, maxTranslate - edgePadding);
-      else translateX = Math.max(translateX, 0);
-
-      track.style.transform = `translateX(${-translateX + edgePadding}px)`;
-
+      col.innerHTML += `
+        <figure class="photo">
+          <a href="${img.full}" class="glightbox" data-gallery="${id}" data-title="${img.title}">
+            <img data-src="${img.thumb}" alt="${img.title}">
+          </a>
+          <figcaption>
+            <strong>${img.title}</strong>
+            <span class="meta">${img.meta}</span>
+          </figcaption>
+        </figure>
+      `;
     });
   }
 
-  
+  populateGallery('recentGrid', recentImages);
+  populateGallery('portfolioGrid', portfolioImages);
 
-  window.addEventListener('scroll', updateCarousels);
-  window.addEventListener('resize', updateCarousels);
-
-  updateCarousels();
-
-  
-
-  // ---- LIGHTBOX ----
-  const lightbox = GLightbox({
-    selector: '.glightbox',
-    touchNavigation: true,
-    loop: true,
-    zoomable: true
+  /* Lazy load */
+  document.querySelectorAll('img[data-src]').forEach(img=>{
+    img.src = img.dataset.src;
+    img.dataset.loaded = true;
   });
 
-});
+  /* Hover states */
+  document.addEventListener('mouseover', e=>{
+    if(e.target.closest('.photo')) e.target.closest('.photo').classList.add('is-hover');
+  });
+  document.addEventListener('mouseout', e=>{
+    if(e.target.closest('.photo')) e.target.closest('.photo').classList.remove('is-hover');
+  });
+
+  /* Contact form demo */
+  const form = document.getElementById('contactForm');
+  if(form){
+    form.addEventListener('submit', e=>{
+      e.preventDefault();
+      alert("Demo form only.");
+    });
+  }
+
+  /* GLightbox */
+  GLightbox({selector: '.glightbox'});
+})();

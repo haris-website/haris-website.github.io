@@ -3,49 +3,39 @@
 <head>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width,initial-scale=1" />
-  <title>Photography — Home</title>
-  <meta name="description" content="Photography portfolio" />
+  <title>Portfolio</title>
   <link rel="stylesheet" href="style.css">
-
-  <!-- GLightbox -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/glightbox/dist/css/glightbox.min.css">
 </head>
 
 <body>
+
   <header class="site-header" role="banner">
     <a class="site-logo" href="index.html">Haris Torlak</a>
     <nav class="site-nav" role="navigation" aria-label="Primary">
       <a class="nav-btn" data-target="index.html">01</a>
       <a class="nav-btn" data-target="portfolio.html">02</a>
     </nav>
-    <button class="fullscreen-toggle" id="fsToggle" title="Toggle fullscreen" aria-label="Toggle fullscreen">⤢</button>
+    <button class="fullscreen-toggle" id="fsToggle2" title="Toggle fullscreen" aria-label="Toggle fullscreen">⤢</button>
   </header>
 
   <main>
-
-    <!-- About -->
-    <section class="panel about-panel reveal" id="about">
+    <section class="panel portfolio-panel reveal">
       <div class="container">
-        <h1>O meni</h1>
-        <p class="byline">Subeme la radio</p>
-      </div>
-    </section>
-
-    <!-- Recent Work -->
-    <section class="panel recent-panel reveal" id="recent">
-      <div class="container">
-        <h2 class = "center-title">RECENT WORK</h2>
+        <h2>Portfolio</h2>
 
         <div class="masonry-wrapper">
-          <div class="masonry" id="recentGrid">
+          <div class="masonry" id="portfolioGrid">
             <div class="col" data-col="0"></div>
             <div class="col" data-col="1"></div>
             <div class="col" data-col="2"></div>
           </div>
         </div>
       </div>
+    </section>
 
-      <!-- Contact -->
+    <!-- Portfolio Contact -->
+    <section class="panel contact-panel reveal">
       <div class="contact-section contact-bg">
         <div class="container">
           <div class="contact-inner sticky-bottom">
@@ -89,7 +79,6 @@
 
   </main>
 
-  <!-- GLightbox -->
   <script src="https://cdn.jsdelivr.net/npm/glightbox/dist/js/glightbox.min.js"></script>
   <script src="script.js"></script>
 </body>
