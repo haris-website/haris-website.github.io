@@ -14,9 +14,11 @@
 html, body { width:100%; margin:0; padding:0; }
 
 body{
-  font-family:Inter, system-ui, -apple-system;
+  font-family:'Sora', sans-serif;
   color:#111;
   background:var(--bg);
+  letter-spacing: .2px;
+  font-weight: 400;
 }
 
 .container{
@@ -29,7 +31,13 @@ figure{
   margin:0;
 }
 
-.site-logo,
+.site-logo {
+  color: inherit !important;
+  text-decoration: none;
+  font-size: 30px;
+  
+}
+
 .site-logo:visited {
   color: inherit !important;
   text-decoration: none;
@@ -81,6 +89,9 @@ figure{
 .nav-btn{
   padding:8px 10px;cursor:pointer;color:inherit;text-decoration:none;
   position:relative;
+  font-size: 16px;
+  letter-spacing: 1px;
+  font-weight: 500;
 }
 
 .nav-btn::after{
@@ -96,10 +107,16 @@ figure{
 }
 
 /* Centered section title */
-.center-title{
-  text-align:center;
-  width:100%;
+.center-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 2px; /* uppercase tracking */
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  text-align: center;
 }
+
 
 
 
@@ -112,6 +129,11 @@ figure{
   margin-left: auto;
   margin-right: auto;
   font-size: 128px;
+  font-family: 'Playfair Display', serif;
+  letter-spacing: -1.2px;
+  line-height: 1.05;
+  font-weight: 600;
+  text-transform: none;
 }
 
 #about .byline {
@@ -207,7 +229,7 @@ figure{
 }
 
 .photo:hover{
-  transform:scale(0.985);
+  transform:scale(1);
   box-shadow:0 10px 28px rgba(0,0,0,0.15);
 }
 
@@ -238,71 +260,30 @@ figure{
 /* ==========================================================
    CONTACT SECTION (unchanged except previous improvements)
 ========================================================== */
-
+/* === CINEMATIC CONTACT BLOCK === */
 .contact-section {
-  padding: 60px 0 90px;
-}
-
-.contact-bg {
+  padding: 120px 0;
   background: var(--contact-bg);
-  color: #f8fafc;
+  color: #fff;
 }
 
-.contact-inner {
+.contact-cinematic {
   display: flex;
   align-items: flex-start;
-  justify-content: center;
-  gap: 70px;
+  justify-content: space-between;
+  gap: 80px;
 }
 
-.contact-left {
-  max-width: 420px;
-}
-
-.contact-left h3 {
-  margin: 0;
-  padding-top: 10px;
-  font-size: 42px;
-  font-weight: 600;
-}
-
-/* Label above value */
-.contact-label {
-  font-size: 18px;
+/* Large Cinematic Heading */
+.contact-text h3 {
+  font-size: 82px;
+  line-height: 0.95;
   font-weight: 700;
-  margin-top: 20px;
-  margin-bottom: 4px;
-  color: #fff;
-}
-
-.contact-value {
-  font-size: 16px;
-  opacity: 0.95;
-  margin-bottom: 12px;
-}
-
-/* Email underline animation */
-.contact-value a {
-  color: #fff;
-  text-decoration: none;
-  position: relative;
-}
-
-.contact-value a::after {
-  content: "";
-  position: absolute;
-  left: 0;
-  bottom: -4px;
-  width: 100%;
-  height: 2px;
-  background: #fff;
-  transform: scaleX(0);
-  transform-origin: left;
-  transition: transform .25s ease;
-}
-
-.contact-value a:hover::after {
-  transform: scaleX(1);
+  letter-spacing: -1px;
+  margin: 0;
+  text-transform: uppercase;
+  max-width: 420px;
+  font-family: 'Playfair Display', serif;
 }
 
 /* Form */
@@ -310,8 +291,69 @@ figure{
   width: 480px;
   display: flex;
   flex-direction: column;
-  gap: 24px;
+  gap: 28px;
 }
+
+
+
+
+.field input,
+.field textarea {
+  font-family: 'Sora', sans-serif;
+  font-size: 18px;
+  font-weight: 400;
+  letter-spacing: 0.3px;
+}
+
+.field input::placeholder,
+.field textarea::placeholder {
+  font-weight: 300;
+  color: rgba(255,255,255,0.75);
+}
+
+
+.underline {
+  height: 2px;
+  background: #777;
+  position: absolute;
+  left: 0;
+  right: 0;
+  bottom: 4px;
+  transition: background .25s;
+}
+
+.field input:focus + .underline,
+.field textarea:focus + .underline {
+  background: #fff;
+}
+
+.field input:focus,
+.field textarea:focus {
+  outline: none !important;
+}
+
+/* Cinematic Button */
+.btn {
+  margin-top: 10px;
+  padding: 18px 24px;
+  font-size: 18px;
+  border-radius: 0;
+  background: #fff;
+  color: #000;
+  border: 2px solid #fff;
+  transition: 0.35s ease;
+  letter-spacing: 1px;
+  font-weight: 600;
+}
+
+.btn:hover {
+  background: transparent;
+  color: #fff;
+  box-shadow: 0 0 12px rgba(255,255,255,0.4);
+}
+
+
+
 
 .field {
   position: relative;
@@ -387,6 +429,16 @@ figure{
   .portfolio-panel .col{
     flex:0 0 calc((100% - var(--gap)) / 2);
   }
+
+
+  #about h1 {
+    font-size: 72px;
+    line-height: 1.05;
+  }
+
+  .contact-text h3 {
+    font-size: 64px;
+  }
 }
 
 /* Phones → still 2 columns (much nicer than 1) */
@@ -417,4 +469,25 @@ figure{
     
   }
 
+
+   #about h1 {
+    font-size: 48px;
+    line-height: 1.1;
+  }
+
+  .contact-text h3 {
+    font-size: 48px;
+    line-height: 1.05;
+  }
+
 }
+
+.field input,
+.field textarea,
+.btn,
+.contact-value,
+.contact-label {
+  font-family: 'Sora', sans-serif;
+}
+
+
