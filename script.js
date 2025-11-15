@@ -123,6 +123,132 @@
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
     },
+
+
+
+    {
+    thumb: "portfolio/street/image_1.jpg",
+    full: "portfolio/street/image_1.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/street/image_2.jpg",
+    full: "portfolio/street/image_2.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/street/image_3.jpg",
+    full: "portfolio/street/image_3.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/street/image_4.jpg",
+    full: "portfolio/street/image_4.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/street/image_5.jpg",
+    full: "portfolio/street/image_5.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/street/image_6.jpg",
+    full: "portfolio/street/image_6.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+
+
+
+    {
+    thumb: "portfolio/re/atifa/image_8.jpg",
+    full: "portfolio/re/atifa/image_8.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_9.jpg",
+    full: "portfolio/re/atifa/image_9.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_10.jpg",
+    full: "portfolio/re/atifa/image_10.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_11.jpg",
+    full: "portfolio/re/atifa/image_11.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_12.jpg",
+    full: "portfolio/re/atifa/image_12.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_13.jpg",
+    full: "portfolio/re/atifa/image_13.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_14.jpg",
+    full: "portfolio/re/atifa/image_14.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_15.jpg",
+    full: "portfolio/re/atifa/image_15.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_16.jpg",
+    full: "portfolio/re/atifa/image_16.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_17.jpg",
+    full: "portfolio/re/atifa/image_17.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_18.jpg",
+    full: "portfolio/re/atifa/image_18.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_19.jpg",
+    full: "portfolio/re/atifa/image_19.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_20.jpg",
+    full: "portfolio/re/atifa/image_20.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/re/atifa/image_21.jpg",
+    full: "portfolio/re/atifa/image_21.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    }
   ];
 
   /* Gallery generator */
@@ -152,15 +278,7 @@
   populateGallery('recentGrid', recentImages);
   populateGallery('portfolioGrid', portfolioImages);
 
-    // --- GLightbox initialization ---
-  if (typeof GLightbox !== 'undefined') {
-    GLightbox({
-      selector: '.glightbox',
-      touchNavigation: true,
-      loop: true,
-      zoomable: false
-    });
-  }
+
 
   /* Lazy load */
   document.querySelectorAll('img[data-src]').forEach(img=>{
@@ -186,78 +304,11 @@
   }
 
 
-  // === Animated Topographic Background (blobby contour lines) ===
-  window.addEventListener("load", () => {
-    const canvas = document.getElementById("topoCanvas");
-    if (!canvas) return;
-    const ctx = canvas.getContext("2d");
-
-    let w = 0, h = 0;
-    let blobs = [];
-
-    function resizeCanvas() {
-      w = canvas.width  = window.innerWidth;
-      h = canvas.height = window.innerHeight; // viewport-sized background
-
-      // define a few "hills" that generate closed contours
-      blobs = [
-        { x: w * 0.3, y: h * 0.4, baseR: 140 },
-        { x: w * 0.7, y: h * 0.5, baseR: 160 },
-        { x: w * 0.5, y: h * 0.8, baseR: 110 }
-      ];
-    }
-
-    // simple pseudo-noise with time component
-    function noise(a, b, t) {
-      const s = 0.8;
-      return (
-        Math.sin(a * 1.3 * s + t * 0.0006) +
-        Math.cos(b * 0.9 * s - t * 0.0004) +
-        Math.sin((a + b) * 0.7 * s + t * 0.0003)
-      ) * 0.33; // normalize-ish
-    }
-
-    function drawTopo(time) {
-      ctx.clearRect(0, 0, w, h);
-      ctx.lineWidth = 1;
-      ctx.strokeStyle = "rgba(0,0,0,0.14)";
-
-      const contourLevels = 5;       // how many rings per blob
-      const levelSpacing  = 26;      // distance between rings
-      const jitter        = 18;      // how wiggly the line is
-      const stepAngle     = Math.PI / 80; // detail of each loop
-
-      blobs.forEach((blob, i) => {
-        for (let level = 0; level < contourLevels; level++) {
-          const baseRadius = blob.baseR + level * levelSpacing;
-
-          ctx.beginPath();
-          for (let ang = 0; ang <= Math.PI * 2 + stepAngle; ang += stepAngle) {
-            const n = noise(ang + i * 10, level * 3, time);
-            const r = baseRadius + n * jitter;
-
-            const x = blob.x + Math.cos(ang) * r;
-            const y = blob.y + Math.sin(ang) * r;
-
-            if (ang === 0) ctx.moveTo(x, y);
-            else ctx.lineTo(x, y);
-          }
-          ctx.stroke();
-        }
-      });
-    }
-
-    function loop(t) {
-      drawTopo(t);
-      requestAnimationFrame(loop);
-    }
-
-    window.addEventListener("resize", resizeCanvas);
-    resizeCanvas();
-    requestAnimationFrame(loop);
+  // --- GLightbox initialization ---
+  GLightbox({
+  selector: '.glightbox',
+  touchNavigation: true,
+  loop: true
   });
-
-
-
 
 })();

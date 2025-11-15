@@ -25,6 +25,10 @@ body{
   padding:0;
 }
 
+figure{
+  margin:0;
+}
+
 .site-logo,
 .site-logo:visited {
   color: inherit !important;
@@ -131,20 +135,25 @@ body{
   --gap:16px;
 }
 
-/* Masonry container */
-.masonry{
+.masonry {
   display:flex;
-  gap:var(--gap);          /* horizontal spacing */
+  gap:var(--gap);           /* this is the ONLY horizontal spacing */
   align-items:flex-start;
 }
 
+.masonry-wrapper {
+  padding-bottom: 40px;   /* adjust as you like */
+}
+
+
 /* Recent work: 3 columns (index page) */
-.col{
-  flex:0 0 calc((100% - 2*var(--gap)) / 3);
+.col {
+  flex: 1 1 0;              /* equal-width flexible columns */
   display:flex;
   flex-direction:column;
-  gap:var(--gap);          /* vertical spacing */
+  gap:var(--gap);           /* vertical spacing between photos */
 }
+
 
 /* Portfolio: 4 columns */
 .portfolio-panel .col{
@@ -155,7 +164,7 @@ body{
 .photo{
   position:relative;
   overflow:hidden;
-  border-radius:6px;
+  
   cursor:pointer;
   transition:transform .25s ease, box-shadow .25s ease;
 }
@@ -164,6 +173,8 @@ body{
   display:block;
   width:100%;
   height:auto;
+  filter: grayscale(0%);
+  transition: filter 0.6s ease;
 }
 
 /* Overlay */
@@ -176,14 +187,16 @@ body{
   justify-content:center;
   text-align:center;
   opacity:0;
-  transition:opacity .25s ease;
+  transition: opacity .35s ease .05s;
+  pointer-events: none;
 }
 
 .photo figcaption::before{
   content:'';
   position:absolute;
   inset:0;
-  background:rgba(255,255,255,0.6);
+  background: rgba(255,255,255,0.3);;
+  pointer-events: none;
 }
 
 .photo figcaption strong,
@@ -194,9 +207,14 @@ body{
 }
 
 .photo:hover{
-  transform:scale(1.04);
+  transform:scale(0.985);
   box-shadow:0 10px 28px rgba(0,0,0,0.15);
 }
+
+.photo:hover img {
+  filter: grayscale(100%);
+}
+
 
 .photo:hover figcaption{
   opacity:1;
@@ -399,15 +417,4 @@ body{
     
   }
 
-}
-
-
-
-#topoCanvas {
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  z-index: -9999;
-  pointer-events: none;
 }
