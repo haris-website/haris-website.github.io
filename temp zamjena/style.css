@@ -13,11 +13,6 @@
 *{box-sizing:border-box}
 html, body { width:100%; margin:0; padding:0; }
 
-/* Prevent tiny layout overshoots from creating horizontal scrolling on mobile */
-@media (max-width:1100px){
-  html, body{ overflow-x:hidden; }
-}
-
 body{
   font-family:'Sora', sans-serif;
   color:#111;
@@ -30,11 +25,6 @@ body{
   max-width:80%;
   margin:0 auto;
   padding:0;
-}
-
-/* More usable container width on small screens (desktop stays identical) */
-@media (max-width:720px){
-  .container{ max-width:92%; }
 }
 
 figure{
@@ -88,20 +78,6 @@ figure{
   transform: translateX(-50%);
   display: flex;
   gap: 18px;
-}
-
-/* Mobile header: stop overlap by letting the nav participate in normal flow */
-@media (max-width:720px){
-  .site-logo{ font-size:22px; }
-
-  .site-nav{
-    position: static;
-    left: auto;
-    transform: none;
-    gap: 12px;
-  }
-
-  .nav-btn{ font-size:14px; padding:6px 8px; }
 }
 
 /* Slide header off-screen on hide */
@@ -185,11 +161,6 @@ figure{
   display:flex;
   gap:var(--gap);           /* this is the ONLY horizontal spacing */
   align-items:flex-start;
-}
-
-/* Allow columns to wrap on smaller screens (prevents overflow on index.html's 3-col markup) */
-@media (max-width:1100px){
-  .masonry{ flex-wrap:wrap; }
 }
 
 .masonry-wrapper {
@@ -277,21 +248,6 @@ figure{
   .portfolio-panel .col{
     flex:0 0 calc((100% - var(--gap)) / 2);
   }
-
-  /* Index has 3 columns in HTML; Portfolio has 4.
-     On tablet/phone we actually *use* only 2 columns (JS rebalances).
-     Hide the unused columns so they can't create overflow. */
-  #recentGrid .col[data-col="2"]{ display:none; }
-  #portfolioGrid .col[data-col="2"],
-  #portfolioGrid .col[data-col="3"]{ display:none; }
-
-  /* Allow columns to wrap cleanly if needed */
-  .masonry{ flex-wrap:wrap; }
-
-  /* Hide extra (empty) columns so the layout is truly 2 columns */
-  #recentGrid .col[data-col="2"]{ display:none; }
-  #portfolioGrid .col[data-col="2"],
-  #portfolioGrid .col[data-col="3"]{ display:none; }
 }
 
 @media (max-width:720px){
@@ -483,14 +439,6 @@ figure{
   .contact-text h3 {
     font-size: 64px;
   }
-
-  /* Contact: stack + prevent wide fixed form from forcing horizontal scroll */
-  .contact-cinematic{
-    flex-direction:column;
-    align-items:stretch;
-    gap:36px;
-  }
-  .contact-form{ width:100%; max-width:560px; }
 }
 
 /* Phones → still 2 columns (much nicer than 1) */
@@ -500,15 +448,12 @@ figure{
     flex:0 0 calc((100% - var(--gap)) / 2);
   }
 
-  /* Contact: stack + full-width (fixes horizontal scrolling) */
-  .contact-cinematic{
+  .contact-inner{
     flex-direction:column;
-    gap:32px;
   }
 
   .contact-form{
     width:100%;
-    max-width: 560px;
   }
 
   .fullscreen-toggle{
@@ -524,15 +469,6 @@ figure{
     
   }
 
-  /* Fix mobile header overlap: stop absolute-centering nav on small screens */
-  .site-logo{ font-size:22px; white-space:nowrap; }
-  .site-nav{
-    position:static;
-    transform:none;
-    gap:12px;
-  }
-  .nav-btn{ font-size:14px; padding:6px 8px; }
-
 
    #about h1 {
     font-size: 48px;
@@ -543,10 +479,6 @@ figure{
     font-size: 48px;
     line-height: 1.05;
   }
-
-  /* Contact block spacing on phones */
-  .contact-section{ padding:80px 0; }
-  .contact-form{ max-width:100%; }
 
 }
 

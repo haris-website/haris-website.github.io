@@ -301,26 +301,14 @@
   ];
 
   /* Gallery generator */
-  function getResponsiveColumnCount(defaultCount){
-    // Desktop stays EXACTLY the same. Only reduce columns on tablets/phones.
-    return window.matchMedia('(max-width: 1100px)').matches ? 2 : defaultCount;
-  }
-
   function populateGallery(id, list){
     const grid = document.getElementById(id);
     if(!grid) return;
 
-    const allCols = Array.from(grid.querySelectorAll('.col'));
-    if(allCols.length === 0) return;
-
-    // Clear previous content so we can re-render on resize/orientation changes.
-    allCols.forEach(c => { c.innerHTML = ''; });
-
-    const colCount = getResponsiveColumnCount(allCols.length);
-    const cols = allCols.slice(0, colCount);
+    const cols = grid.querySelectorAll('.col');
 
     list.forEach((img, index)=>{
-      const col = cols[index % colCount];
+      const col = cols[index % cols.length];
 
       col.innerHTML += `
         <figure class="photo">
@@ -336,32 +324,15 @@
     });
   }
 
-  function renderGalleries(){
-    populateGallery('recentGrid', recentImages);
-    populateGallery('portfolioGrid', portfolioImages);
-
-    // Lazy load (simple)
-    document.querySelectorAll('img[data-src]').forEach(img=>{
-      img.src = img.dataset.src;
-      img.dataset.loaded = true;
-    });
-  }
-
-  renderGalleries();
+  populateGallery('recentGrid', recentImages);
+  populateGallery('portfolioGrid', portfolioImages);
 
 
 
-  // Re-render galleries on breakpoint changes (phone/tablet rotation, window resize)
-  let resizeTimer = null;
-  window.addEventListener('resize', ()=>{
-    window.clearTimeout(resizeTimer);
-    resizeTimer = window.setTimeout(()=>{
-      renderGalleries();
-      // If GLightbox is available, refresh bindings after re-render.
-      if(window.GLightbox && typeof window.__lightboxInstance?.reload === 'function'){
-        window.__lightboxInstance.reload();
-      }
-    }, 150);
+  /* Lazy load */
+  document.querySelectorAll('img[data-src]').forEach(img=>{
+    img.src = img.dataset.src;
+    img.dataset.loaded = true;
   });
 
   /* Hover states */
@@ -383,12 +354,10 @@
 
 
   // --- GLightbox initialization ---
-  if(window.GLightbox){
-    window.__lightboxInstance = GLightbox({
-      selector: '.glightbox',
-      touchNavigation: true,
-      loop: true
-    });
-  }
+  GLightbox({
+  selector: '.glightbox',
+  touchNavigation: true,
+  loop: true
+  });
 
 })();
