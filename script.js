@@ -43,20 +43,32 @@
   /* Placeholder images */
   const recentImages = [
     {
-    thumb: "portfolio/street/image_1.jpg",
-    full: "portfolio/street/image_1.jpg",
+    thumb: "portfolio/landscape/image_1.jpg",
+    full: "portfolio/landscape/image_1.jpg",
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
     },
     {
-    thumb: "portfolio/street/image_2.jpg",
-    full: "portfolio/street/image_2.jpg",
+    thumb: "portfolio/landscape/image_2.jpg",
+    full: "portfolio/landscape/image_2.jpg",
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
     },
     {
-    thumb: "portfolio/street/image_3.jpg",
-    full: "portfolio/street/image_3.jpg",
+    thumb: "portfolio/dron/image_1.jpg",
+    full: "portfolio/dron/image_1.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/astro/image_9.jpg",
+    full: "portfolio/astro/image_9.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/astro/image_8.jpg",
+    full: "portfolio/astro/image_8.jpg",
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
     },
@@ -65,22 +77,13 @@
     full: "portfolio/street/image_4.jpg",
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/street/image_5.jpg",
-    full: "portfolio/street/image_5.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/street/image_6.jpg",
-    full: "portfolio/street/image_6.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
     }
   ];
 
   const portfolioImages = [
+
+    //ASTRO
+
     {
     thumb: "portfolio/astro/image_1.jpg",
     full: "portfolio/astro/image_1.jpg",
@@ -123,8 +126,38 @@
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
     },
+    {
+    thumb: "portfolio/astro/image_8.jpg",
+    full: "portfolio/astro/image_8.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/astro/image_9.jpg",
+    full: "portfolio/astro/image_9.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
 
 
+    //LANDSCAPE
+
+
+    {
+    thumb: "portfolio/landscape/image_1.jpg",
+    full: "portfolio/landscape/image_1.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/landscape/image_2.jpg",
+    full: "portfolio/landscape/image_2.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+
+
+    //STREET
 
     {
     thumb: "portfolio/street/image_1.jpg",
@@ -163,7 +196,7 @@
     meta: "Canon 5D — 50mm — f/1.8"
     },
 
-
+    //REAL ESTATE
 
     {
     thumb: "portfolio/re/atifa/image_8.jpg",
@@ -246,6 +279,22 @@
     {
     thumb: "portfolio/re/atifa/image_21.jpg",
     full: "portfolio/re/atifa/image_21.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+
+    //DRON 
+
+
+    {
+    thumb: "portfolio/dron/image_1.jpg",
+    full: "portfolio/dron/image_1.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/dron/image_2.jpg",
+    full: "portfolio/dron/image_2.jpg",
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
     }
