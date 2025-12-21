@@ -559,3 +559,22 @@ figure{
 }
 
 
+/* ===============================
+   Minimal site footer
+   =============================== */
+
+.site-footer {
+  text-align: center;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  opacity: 0.45;
+  padding: 2.5rem 1rem 2rem;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+@media (max-width: 768px) {
+  .site-footer {
+    padding: 2rem 1rem;
+  }
+}
