@@ -45,39 +45,39 @@
     {
     thumb: "portfolio/dron/image_1.jpg",
     full: "portfolio/dron/image_1.jpg",
-    title: "Sunset Portrait",
+    title: "Zalazak sunca iznad Sarajeva",
     meta: "Canon 5D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/landscape/image_2.jpg",
     full: "portfolio/landscape/image_2.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/landscape/image_1.jpg",
-    full: "portfolio/landscape/image_1.jpg",
-    title: "Sunset Portrait",
+    title: "Tragovi zvijezda iznad Crvenog kuka",
     meta: "Canon 5D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/street/image_4.jpg",
     full: "portfolio/street/image_4.jpg",
-    title: "Sunset Portrait",
+    title: "Pijaca u Sousse-u (Tunis)",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
+    thumb: "portfolio/landscape/image_1.jpg",
+    full: "portfolio/landscape/image_1.jpg",
+    title: "Tragovi zvijezda iznad Puzima",
     meta: "Canon 5D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/astro/image_9.jpg",
     full: "portfolio/astro/image_9.jpg",
-    title: "Sunset Portrait",
+    title: "Plejade (M45)",
     meta: "Canon 5D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/astro/image_8.jpg",
     full: "portfolio/astro/image_8.jpg",
-    title: "Sunset Portrait",
+    title: "Puni mjesec",
     meta: "Canon 5D — 50mm — f/1.8"
-    },
+    }
     
   ];
 
