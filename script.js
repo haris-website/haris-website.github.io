@@ -43,20 +43,20 @@
   /* Placeholder images */
   const recentImages = [
     {
+    thumb: "portfolio/dron/image_1.jpg",
+    full: "portfolio/dron/image_1.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
     thumb: "portfolio/landscape/image_1.jpg",
     full: "portfolio/landscape/image_1.jpg",
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
     },
     {
-    thumb: "portfolio/landscape/image_2.jpg",
-    full: "portfolio/landscape/image_2.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/dron/image_1.jpg",
-    full: "portfolio/dron/image_1.jpg",
+    thumb: "portfolio/street/image_4.jpg",
+    full: "portfolio/street/image_4.jpg",
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
     },
@@ -73,8 +73,8 @@
     meta: "Canon 5D — 50mm — f/1.8"
     },
     {
-    thumb: "portfolio/street/image_4.jpg",
-    full: "portfolio/street/image_4.jpg",
+    thumb: "portfolio/landscape/image_2.jpg",
+    full: "portfolio/landscape/image_2.jpg",
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
     }
