@@ -49,6 +49,12 @@
     meta: "Canon 5D — 50mm — f/1.8"
     },
     {
+    thumb: "portfolio/landscape/image_2.jpg",
+    full: "portfolio/landscape/image_2.jpg",
+    title: "Sunset Portrait",
+    meta: "Canon 5D — 50mm — f/1.8"
+    },
+    {
     thumb: "portfolio/landscape/image_1.jpg",
     full: "portfolio/landscape/image_1.jpg",
     title: "Sunset Portrait",
@@ -72,12 +78,7 @@
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
     },
-    {
-    thumb: "portfolio/landscape/image_2.jpg",
-    full: "portfolio/landscape/image_2.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    }
+    
   ];
 
   const portfolioImages = [
