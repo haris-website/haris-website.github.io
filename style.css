@@ -578,3 +578,127 @@ figure{
     padding: 2rem 1rem;
   }
 }
+
+/* ===========================
+   REAL ESTATE PAGE
+=========================== */
+
+.realestate-panel {
+  padding-top: var(--section-top-offset);
+}
+
+.property-block {
+  margin-bottom: 100px;
+}
+
+.property-title {
+  font-family: 'Playfair display', sans-serif;
+  font-size: 36px;
+  font-weight: 600;
+  margin-bottom: 40px;
+  letter-spacing: -0.5px;
+  text-align : center;
+}
+
+.center-title {
+  font-family: 'Sora', sans-serif;
+  font-size: 28px;
+  font-weight: 600;
+  letter-spacing: 2px; /* uppercase tracking */
+  text-transform: uppercase;
+  margin-bottom: 40px;
+  text-align: center;
+}
+
+/* ===========================
+   REAL ESTATE MASONRY FIX
+=========================== */
+
+.property-grid {
+  column-count: 2;
+  column-gap: var(--gap);
+}
+
+.property-grid .photo {
+  break-inside: avoid;
+  margin-bottom: var(--gap);
+  display: inline-block;
+  width: 100%;
+}
+
+/* Mobile still 2 columns (clean look) */
+@media (max-width: 720px) {
+  .property-title {
+    font-size: 26px;
+  }
+}
+
+
+
+/* ===============================
+   FULLSCREEN MENU
+=============================== */
+
+.menu-toggle {
+  width: 28px;
+  height: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  background: none;
+  border: 0;
+  cursor: pointer;
+  padding: 0;
+  z-index: 1001;
+}
+
+.menu-toggle span {
+  height: 2px;
+  width: 100%;
+  background: #000;
+  transition: 0.3s ease;
+}
+
+/* Overlay */
+.menu-overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(8px);
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.35s ease;
+  z-index: 1000;
+}
+
+.menu-overlay.active {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.menu-overlay-nav {
+  display: flex;
+  flex-direction: column;
+  gap: 30px;
+  text-align: center;
+}
+
+.menu-overlay-nav a {
+  font-family: 'Sora', sans-serif;
+  font-size: 21px;
+  font-weight: 600;
+  cursor: pointer;
+  color: #000;
+  text-decoration: none;
+  transition: 0.25s ease;
+}
+
+.menu-overlay-nav a:hover {
+  opacity: 0.6;
+  font-size: 36px;
+}

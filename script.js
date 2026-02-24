@@ -18,10 +18,41 @@
       document.documentElement.requestFullscreen().catch(()=>{});
     }
   }
-  const fs1 = document.getElementById('fsToggle');
-  const fs2 = document.getElementById('fsToggle2');
-  if(fs1) fs1.addEventListener('click', toggleFullscreen);
-  if(fs2) fs2.addEventListener('click', toggleFullscreen);
+  /* ===== Fullscreen Menu ===== */
+
+const menuToggle = document.getElementById('menuToggle');
+const menuOverlay = document.getElementById('menuOverlay');
+
+if(menuToggle && menuOverlay){
+
+  menuToggle.addEventListener('click', ()=>{
+    menuOverlay.classList.toggle('active');
+  });
+
+  menuOverlay.querySelectorAll('a').forEach(link=>{
+    link.addEventListener('click', ()=>{
+
+      const action = link.getAttribute('data-link');
+
+      if(action === 'contact'){
+        menuOverlay.classList.remove('active');
+        window.scrollTo({
+          top: document.body.scrollHeight,
+          behavior: 'smooth'
+        });
+      }
+
+      else if(action === 'fullscreen'){
+        menuOverlay.classList.remove('active');
+        toggleFullscreen();
+      }
+
+      else {
+        window.location.href = action;
+      }
+    });
+  });
+}
 
   /* ===== Hide / Show header on scroll ===== */
   let lastScroll = 0;
@@ -193,93 +224,6 @@
     {
     thumb: "portfolio/street/image_6.jpg",
     full: "portfolio/street/image_6.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-
-    //REAL ESTATE
-
-    {
-    thumb: "portfolio/re/atifa/image_8.jpg",
-    full: "portfolio/re/atifa/image_8.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_9.jpg",
-    full: "portfolio/re/atifa/image_9.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_10.jpg",
-    full: "portfolio/re/atifa/image_10.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_11.jpg",
-    full: "portfolio/re/atifa/image_11.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_12.jpg",
-    full: "portfolio/re/atifa/image_12.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_13.jpg",
-    full: "portfolio/re/atifa/image_13.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_14.jpg",
-    full: "portfolio/re/atifa/image_14.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_15.jpg",
-    full: "portfolio/re/atifa/image_15.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_16.jpg",
-    full: "portfolio/re/atifa/image_16.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_17.jpg",
-    full: "portfolio/re/atifa/image_17.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_18.jpg",
-    full: "portfolio/re/atifa/image_18.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_19.jpg",
-    full: "portfolio/re/atifa/image_19.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_20.jpg",
-    full: "portfolio/re/atifa/image_20.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
-    },
-    {
-    thumb: "portfolio/re/atifa/image_21.jpg",
-    full: "portfolio/re/atifa/image_21.jpg",
     title: "Sunset Portrait",
     meta: "Canon 5D — 50mm — f/1.8"
     },
