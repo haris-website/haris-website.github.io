@@ -77,37 +77,37 @@ if(menuToggle && menuOverlay){
     thumb: "portfolio/dron/image_1.jpg",
     full: "portfolio/dron/image_1.jpg",
     title: "Zalazak sunca iznad Sarajeva",
-    meta: "Canon 5D — 50mm — f/1.8"
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/landscape/image_2.jpg",
     full: "portfolio/landscape/image_2.jpg",
     title: "Tragovi zvijezda iznad Crvenog kuka",
-    meta: "Canon 5D — 50mm — f/1.8"
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/street/image_4.jpg",
     full: "portfolio/street/image_4.jpg",
     title: "Pijaca u Sousse-u (Tunis)",
-    meta: "Canon 5D — 50mm — f/1.8"
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/landscape/image_1.jpg",
     full: "portfolio/landscape/image_1.jpg",
     title: "Tragovi zvijezda iznad Puzima",
-    meta: "Canon 5D — 50mm — f/1.8"
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/astro/image_9.jpg",
     full: "portfolio/astro/image_9.jpg",
-    title: "Plejade (M45)",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Plejade/Pleiades (M45)",
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/astro/image_8.jpg",
     full: "portfolio/astro/image_8.jpg",
     title: "Puni mjesec",
-    meta: "Canon 5D — 50mm — f/1.8"
+    meta: "Canon 250D — 50mm — f/1.8"
     }
     
   ];
@@ -119,56 +119,56 @@ if(menuToggle && menuOverlay){
     {
     thumb: "portfolio/astro/image_1.jpg",
     full: "portfolio/astro/image_1.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Galaksija Andromeda (M31)",
+    meta: "Canon 250D — 135mm — f/5.6"
     },
     {
     thumb: "portfolio/astro/image_2.jpg",
     full: "portfolio/astro/image_2.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Mjesec u prvoj četvrti",
+    meta: "Canon 250D — 300mm — f/6.3"
     },
     {
     thumb: "portfolio/astro/image_3.jpg",
     full: "portfolio/astro/image_3.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Mliječni put iznad bivaka 'Zoran Šimić'",
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/astro/image_4.jpg",
     full: "portfolio/astro/image_4.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Mliječni put iznad Visočice (Štinji do)",
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/astro/image_5.jpg",
     full: "portfolio/astro/image_5.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "HDR punog Mjeseca",
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/astro/image_6.jpg",
     full: "portfolio/astro/image_6.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Centar Mliječnog Puta",
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/astro/image_7.jpg",
     full: "portfolio/astro/image_7.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Mliječni Put iznad stećaka kod sela Umoljani",
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/astro/image_8.jpg",
     full: "portfolio/astro/image_8.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Puni Mjesec",
+    meta: "Canon 250D — 300mm — f/6.3"
     },
     {
     thumb: "portfolio/astro/image_9.jpg",
     full: "portfolio/astro/image_9.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Plejade/Sedam sestara (M45)",
+    meta: "Canon 250D — 50mm — f/1.8"
     },
 
 
@@ -178,14 +178,14 @@ if(menuToggle && menuOverlay){
     {
     thumb: "portfolio/landscape/image_1.jpg",
     full: "portfolio/landscape/image_1.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Tragovi zvijezda iznad vrha Crveni kuk (Star trails)",
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/landscape/image_2.jpg",
     full: "portfolio/landscape/image_2.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Tragovi zvijezda iznad vrha Puzim (Star trails)",
+    meta: "Canon 250D — 50mm — f/1.8"
     },
 
 
@@ -195,37 +195,37 @@ if(menuToggle && menuOverlay){
     thumb: "portfolio/street/image_1.jpg",
     full: "portfolio/street/image_1.jpg",
     title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/street/image_2.jpg",
     full: "portfolio/street/image_2.jpg",
     title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/street/image_3.jpg",
     full: "portfolio/street/image_3.jpg",
     title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/street/image_4.jpg",
     full: "portfolio/street/image_4.jpg",
     title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/street/image_5.jpg",
     full: "portfolio/street/image_5.jpg",
     title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/street/image_6.jpg",
     full: "portfolio/street/image_6.jpg",
     title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    meta: "Canon 250D — 50mm — f/1.8"
     },
 
     //DRON 
@@ -234,14 +234,14 @@ if(menuToggle && menuOverlay){
     {
     thumb: "portfolio/dron/image_1.jpg",
     full: "portfolio/dron/image_1.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Zalazak sunca iznad Sarajeva i Bijele Tabije",
+    meta: "Canon 250D — 50mm — f/1.8"
     },
     {
     thumb: "portfolio/dron/image_2.jpg",
     full: "portfolio/dron/image_2.jpg",
-    title: "Sunset Portrait",
-    meta: "Canon 5D — 50mm — f/1.8"
+    title: "Panorama zalaska sunca iznad Sarajeva i Bijele Tabije",
+    meta: "Canon 250D — 50mm — f/1.8"
     }
   ];
 
@@ -322,7 +322,7 @@ if(menuToggle && menuOverlay){
   if(form){
     form.addEventListener('submit', e=>{
       e.preventDefault();
-      alert("Demo form only.");
+      alert("Ne radi");
     });
   }
 
