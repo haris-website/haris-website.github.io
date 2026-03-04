@@ -62,6 +62,12 @@ menuOverlay.addEventListener('click', (e) => {
   }
 });
 
+document.addEventListener('keydown', (e) => {
+  if (e.key === "Escape") {
+    menuOverlay.classList.remove('active');
+  }
+});
+
   /* ===== Hide / Show header on scroll ===== */
   let lastScroll = 0;
 

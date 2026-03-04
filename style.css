@@ -118,6 +118,11 @@ figure{
   font-weight: 500;
 }
 
+.nav-btn.active{
+  transform: scale(1.2);
+}
+
+
 .nav-btn::after{
   content:'';position:absolute;left:0;bottom:-6px;width:100%;height:2px;
   background:currentColor;transform:scaleX(0);
