@@ -119,7 +119,7 @@ figure{
 }
 
 .nav-btn.active{
-  transform: scale(1.2);
+  font-weight: 900;
 }
 
 
