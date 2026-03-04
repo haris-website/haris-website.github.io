@@ -54,6 +54,14 @@ if(menuToggle && menuOverlay){
   });
 }
 
+/* Close menu when clicking outside links */
+
+menuOverlay.addEventListener('click', (e) => {
+  if (!e.target.closest('.menu-overlay-nav')) {
+    menuOverlay.classList.remove('active');
+  }
+});
+
   /* ===== Hide / Show header on scroll ===== */
   let lastScroll = 0;
 
